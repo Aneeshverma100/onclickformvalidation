@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container{border:1px solid black;width:20%;padding-left:3%;text-align: justify;margin-left:38%;background-color:lightblue;border-radius: 20px;}
+</style>
+<script>
+function validation()
+{
+var a = document.form.name.value;
+if(a=="")
+{
+alert("Please Enter Your Name");
+document.form.name.focus();
+return false;
+}
+if(!isNaN(a))
+{
+alert("Please Enter Only Characters");
+document.form.name.select();
+return false;
+}
+var b = document.form.address.value;
+if(b=="")
+{
+alert("Please Enter Your Address");
+document.form.address.focus();
+return false;
+}
+var c = document.form.phone.value;
+if(c=="")
+{
+alert("please Enter the Contact Number");
+document.form.phone.focus();
+return false;
+}
+if(isNaN(c))
+{
+alert("Enter the valid Phone Number");
+document.form.phone.focus();
+return false;
+
+}
+}
+
+</script>
+</head>
+<h1 style="text-align: center"> USER FORM <hr width="30%"></h1>          
+<div class="container">
+<form name="form" method="post" onsubmit="return validation()"> 
+     
+    <p><b>Name:-</b><br> <input type="text"  name="name" placeholder="Name"> </p><br>       
+    <p><b>Address:-</b><br> <input type="text" name="address" placeholder="Address">  </p><br>
+    <p><b>E-mail Address:-</b><br><input type="email" id="myEmail" placeholder="E-mail Address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></p><br>
+    <p><b>Password:-</b><br><input type="password" placeholder="Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" > </p><br>
+    <p><b>Phone No:-</b><br> <input type="text" name="phone" placeholder="Phone No."> </p><br> 
+    <p><b>Date of Birth:-</b><br><input type="date" data-date-inline-picker="true" />
+    <br><br>
+	<center><input type="submit" value="Submit"></center>
+	 <br>
+	
+
+</form>
+</div>
+
+</html>
